@@ -1,0 +1,42 @@
+{
+    "directory_root": "root",
+    "startup_script": [
+        "echo Running Startup Scripts...",
+        "cd ..",
+        "mkdir home",
+        "mkdir tmp",
+        "mkdir error",
+        "trunc tmp",
+        "cd home",
+        "clear"
+    ],
+    "start_location": "/home",
+    "default_structure": [
+        "/home/Desktop",
+        "/home/Downloads",
+        "/home/Music",
+        "/home/Pictures",
+        "/home/Videos",
+        "/home/Documents",
+        "/tmp"
+    ],
+    "text_edit_program_name": "notepad.exe",
+    "default_history_commands": 10,
+    "date_format": "%Y/%m/%d %I:%M:%S %p",
+    "dump_file_format": "%Y-%m-%d_%H-%M-%S_{fname}",
+    "error_report_directory": "/error",
+    "error_report_filename": "dump.txt",
+    "capture_program_output": 0,
+    "disabled_commands": [
+        "sleep",
+        "shutdown",
+        "ping",
+        "terminate"
+    ],
+    "list_delimiter": "\n",
+    "sql_commands": {
+        "tables": "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;",
+        "describe {}": "PRAGMA table_info({});"
+    },
+    "overrides": ["overrides.py"]
+}
