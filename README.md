@@ -85,3 +85,56 @@ For even more customization options, see the `config.json` file.
     "overrides": ["overrides.py"]
 }
 ```
+---
+
+**Custom Commands**
+
+Custom commands allows users to define and create their own custom commands without needing to overwrite the file.
+This system also allows users to override the functionality of commands to behave in a more customized way.
+
+To add a new file to the list of commands, simply add the name of the module to the end of the `overrides` list in the JSON file.
+
+These commands are very simple to create. Simply define a function, which takes `*args` as the single argument. You do not need to worry about handeling exceptions because not enough arguements were provided. The system will take care of that.
+
+Please be sure that each function has a docstring. This is the help text of the function. Here is the recommended format for help text:
+```
+'''
+    Command Description
+
+    Usage:
+        Usage
+        All variables are in block caps,
+        All optional variables are block caps, and surrounded by square brackets
+        All key words are lowercase
+        
+    Options:
+        option 
+        (try to have 2 versions of each option. 
+        One that starts with 1 dash, and is 1 letter, 
+        and one that contains 2 dashes, and the full word replacing spaces with dashes)
+            Description of the option
+            
+        example:
+        -a, --all
+            Do not ignore entries starting with .
+''' 
+```
+
+Here is an example of a custom funcion (This function requires the `return_value` variable from the list `CashInterpreter.py` module)
+```
+def custom_command(*args):
+    """
+    This Is A Sample Custom Command
+
+    Usage:
+        custom_command
+    """
+    return_value.append("hello world")
+
+```
+
+Each file should be able to import a variable called `return_value` from the `CashInterpreter.py` module. This is not mandatory, however, this is the list of values which is returned to the code which called the `interpret_command` function. If this is not imported, it will not be possible to make any sort of output, unless you are just printing to the console.
+
+You can override a function (and I won't be offended) simply by defining a function with the same name. Anything in an override file will automatically override any of the native functions.
+
+**DON'T FORGET THE DOCSTRINGS**

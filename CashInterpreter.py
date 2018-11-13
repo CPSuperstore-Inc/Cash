@@ -1073,6 +1073,29 @@ def vars(*args):
         return_value.append("{}{}{}".format(key, " " * (space - len(key)), value))
 
 
+def unixdate(*args):
+    """
+    Converts unix time to datetime
+
+    Usage:
+        unixdate UNIXTIME [FORMAT]
+    """
+    timestamp = int(float(args[0]))
+    style = '%Y-%m-%d %H:%M:%S'
+    if len(args) > 1:
+        style = ' '.join(args[1:])
+
+    return_value.append(datetime.datetime.utcfromtimestamp(timestamp).strftime(style))
+
+
+def unixtime(*args):
+    """
+    Returns Unix Time
+
+    Usage:
+        unixtime
+    """
+    return_value.append(str(time.time()))
 # endregion
 
 
@@ -1366,7 +1389,7 @@ def help(*args):
               'directory_path', 'execute_file', 'get_command_args', 'get_cwd', 'get_docstring', 'command_history',
               'platform', 'interpret_command', 'os', 'return_value', 'shutil', 'subprocess', 'sys', 'temporary_storage',
               'time', 'variables', 'zipfile', 'getpass', 'requests', 'config', 're', "sqlite3", "SQL", "execute_sql",
-              "selected_database", "get_prompt"]
+              "selected_database", "get_prompt", "overridden", "mysql", "item", "i"]
     delete += config["disabled_commands"]
     modules = dir(current_module)
     approved = []
