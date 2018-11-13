@@ -352,7 +352,11 @@ def execute_sql(command, database):
                         params = " ".join(query_lst[1:])
                         query = config["sql_commands"][cmd].format(params)
         result = variables[database].execute_update(query)
-        headers = list(variables[database].description)
+        try:
+            headers = list(variables[database].description)
+        except TypeError:
+            return_value.append(query)
+            return
 
         if no_table:
             spaces = 0
