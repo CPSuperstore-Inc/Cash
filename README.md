@@ -3,6 +3,19 @@ A Customizable Terminal For Modifing Files And Things
 
 ---
 
+**Installation**
+
+Please install the following libraries to ensure everything will work properly:
+
+| Library                  | Command  |
+| ------------------------ | :------------ |
+| Requests            | `pip install requests` |
+| MySQL            | `pip install mysql-connector` |
+
+_Based On The Modules Not Included In The Python 2.7 Standard Library_
+
+---
+
 To use, simply run "cashConsole.py". 
 
 Alternatively, you can create your own script (so it can be run anywhere you need, like a web app)

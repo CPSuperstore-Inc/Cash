@@ -852,6 +852,17 @@ def cdls(*args):
     ls(*args)
 
 
+def sdir(*args):
+    """
+    Changes The Current Working Directory To The Default Start Directory
+
+    Usage:
+        sdir
+    """
+    command, args = get_command_args(args)
+    global cwd
+    cwd = directory_path + config["start_location"]
+
 # endregion
 
 

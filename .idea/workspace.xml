@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CashInterpreter.py" afterPath="$PROJECT_DIR$/CashInterpreter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overrides.py" afterPath="$PROJECT_DIR$/overrides.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,37 +16,38 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="CashInterpreter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CashInterpreter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="859" column="12" lean-forward="false" selection-start-line="859" selection-start-column="12" selection-end-line="859" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#427#1" expanded="false" />
+                <element signature="e#446#455#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="cashConsole.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cashConsole.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="57">
+              <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CashInterpreter.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CashInterpreter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="1378" column="0" lean-forward="false" selection-start-line="1378" selection-start-column="0" selection-end-line="1381" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#427#1" expanded="false" />
-                <element signature="e#446#455#0" expanded="true" />
-                <element signature="e#690#719#0" expanded="false" />
-                <element signature="e#962#983#0" expanded="false" />
-                <element signature="e#4493#4509#0" expanded="false" />
-                <element signature="e#5485#5514#0" expanded="false" />
-                <element signature="e#11390#11406#0" expanded="false" />
-                <element signature="e#21073#21092#0" expanded="false" />
-                <element signature="e#22765#22780#0" expanded="false" />
-                <element signature="e#28485#28501#0" expanded="false" />
-                <element signature="e#30209#30225#0" expanded="false" />
-                <element signature="e#32339#32358#0" expanded="false" />
-                <element signature="e#34182#34194#0" expanded="false" />
-                <element signature="e#37468#37500#0" expanded="false" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="285">
+                <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -65,7 +65,7 @@
       <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="760">
               <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="14" />
               <folding />
             </state>
@@ -89,7 +89,6 @@
       <find>get_command_args</find>
       <find>setup</find>
       <find>shutdo</find>
-      <find>cd</find>
       <find>quit</find>
       <find>exit</find>
       <find>vars</find>
@@ -113,6 +112,7 @@
       <find>directory_root</find>
       <find>system</find>
       <find>unix</find>
+      <find>cd</find>
     </findStrings>
     <replaceStrings>
       <replace>return_value.append(</replace>
@@ -140,15 +140,15 @@
         <option value="$PROJECT_DIR$/me" />
         <option value="$PROJECT_DIR$/cashConsole.py" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/CashInterpreter.py" />
         <option value="$PROJECT_DIR$/overrides.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/CashInterpreter.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="2391" />
-    <option name="y" value="120" />
+    <option name="y" value="121" />
     <option name="width" value="1298" />
     <option name="height" value="928" />
   </component>
@@ -198,8 +198,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -343,7 +343,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2391" y="120" width="1298" height="928" extended-state="6" />
+    <frame x="2391" y="121" width="1298" height="928" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -493,7 +493,7 @@
     <entry file="file://$PROJECT_DIR$/root/error/2018-10-29_09-07-17_dump.txt" />
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
+        <state relative-caret-position="760">
           <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="14" />
           <folding />
         </state>
@@ -509,43 +509,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cashConsole.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="57">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="344">
-            <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CashInterpreter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="1378" column="0" lean-forward="false" selection-start-line="1378" selection-start-column="0" selection-end-line="1381" selection-end-column="12" />
+        <state relative-caret-position="190">
+          <caret line="859" column="12" lean-forward="false" selection-start-line="859" selection-start-column="12" selection-end-line="859" selection-end-column="12" />
           <folding>
             <element signature="e#0#427#1" expanded="false" />
             <element signature="e#446#455#0" expanded="true" />
-            <element signature="e#690#719#0" expanded="false" />
-            <element signature="e#962#983#0" expanded="false" />
-            <element signature="e#4493#4509#0" expanded="false" />
-            <element signature="e#5485#5514#0" expanded="false" />
-            <element signature="e#11390#11406#0" expanded="false" />
-            <element signature="e#21073#21092#0" expanded="false" />
-            <element signature="e#22765#22780#0" expanded="false" />
-            <element signature="e#28485#28501#0" expanded="false" />
-            <element signature="e#30209#30225#0" expanded="false" />
-            <element signature="e#32339#32358#0" expanded="false" />
-            <element signature="e#34182#34194#0" expanded="false" />
-            <element signature="e#37468#37500#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="285">
+            <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
