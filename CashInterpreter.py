@@ -792,9 +792,34 @@ def cd(*args):
         new = "/".join(cwd.split("/")[:-1])
         if new.startswith(directory_path):
             cwd = new
+    elif command[0] == "~":
+        cwd = config["directory_root"] + config["start_location"]
+    elif command[0] == "/":
+        cwd = config["directory_root"]
+    elif command[0].startswith(config["directory_root"]):
+        if os.path.isdir(command[0]):
+            cwd = command[0]
+        else:
+            return_value.append(
+                "Could Not Navigate To {} Because The Directory Either Does Not Exist Or Is A File".format(command[0]))
     else:
+        dst = cwd
+        dst.replace("\\", "/")
+        dst = dst.split("/")
+
+        for i in range(command[0].count("../")):
+            try:
+                del dst[-1]
+            except IndexError:
+                break
+        dst = "/".join(dst)
+        command[0] = command[0].replace("../", "")
+        if dst == "":
+            cwd = config["directory_root"]
         if os.path.isdir(cwd + "/" + command[0]):
             cwd += "/" + command[0]
+        elif os.path.isdir(dst + "/" + command[0]):
+            cwd = dst + "/" + command[0]
         else:
             return_value.append(
                 "Could Not Navigate To {} Because The Directory Either Does Not Exist Or Is A File".format(command[0]))
