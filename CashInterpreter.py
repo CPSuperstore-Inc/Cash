@@ -107,9 +107,8 @@ def interpret_command(command):
 
     # check if the command is the path to a file
     if os.path.isfile(cwd + "/" + command):
-
         # if it is, execute as a file
-        (cwd + "/" + command)
+        execute_file(os.getcwd() + "/" + cwd + "/" + command)
 
     # check if the command is a variable
     elif command in variables:
@@ -775,8 +774,6 @@ def du(*args):
 
                 total_size += stat.st_size
         return_value.append(arg + " " * (space - len(arg)) + str(total_size))
-
-
 # endregion
 
 
@@ -1270,6 +1267,8 @@ def ipconfig(*args):
 
 # region Executable
 def execute_file(path):
+    global return_value
+
     old_cwd = os.getcwd()
     dir, name = os.path.split(path)
     os.chdir(dir)
@@ -1283,14 +1282,15 @@ def execute_file(path):
         process = subprocess.Popen([path])
         process.wait()
     else:
+        val = []
         shell_code = open(path, 'r').readlines()
         for line in shell_code:
             try:
-                output = interpret_command(line.replace("\n", ""))
-                if output != []:
-                    return_value.append('\n'.join(output))
+                interpret_command(line.replace("\n", ""))
+                val += return_value
             except TypeError:
-                return_value.append("Could Not Read File")
+                val.append("Could Not Read File")
+        return_value = val
     os.chdir(old_cwd)
 
 
