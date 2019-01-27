@@ -27,7 +27,7 @@ import getpass
 import requests
 import traceback
 import sqlite3
-import mysql.connector  # pip install mysql-connector
+# import mysql.connector  # pip install mysql-connector-python
 
 # endregion
 
@@ -121,13 +121,26 @@ def interpret_command(command):
         if command.split(" ")[0] in config["disabled_commands"]:
             return_value.append("Disabled Command. Use 'help' For A List Of Commands")
         else:
+            original = command
             command = command_to_function(command)
             try:
                 # execute the function
                 exec command
-            except (NameError, SyntaxError, TypeError):
+            except (NameError, SyntaxError, TypeError) as e:
                 # if a NameError, SyntaxError, or TypeError is thrown, alert the user that the command is unknown
-                return_value.append("Unknown Command. Use 'help' For A List Of Commands")
+
+                ignore_messages = [
+                    "name '{}' is not defined".format(original)
+                ]
+                ignore_errors = [
+                    SyntaxError,
+                    TypeError
+                ]
+
+                if e.message in ignore_messages or type(e) in ignore_errors:
+                    return_value.append("Unknown Command. Use 'help' For A List Of Commands")
+                else:
+                    dump(locals())
 
             except IndexError:
                 # it an IndexError is thrown, alert the user that there are missing arguements,
@@ -170,20 +183,23 @@ class SQLConnection:
         self.password = password
         self.c = None
         self.conn = None
-        try:
-            self.connect()
-        except mysql.connector.InterfaceError:
-            return_value.append("Failed To Connect To Database At '{}'".format(self.url))
+
+        self.connect()
+        # try:
+        #     self.connect()
+        # except mysql.connector.InterfaceError:
+        #     return_value.append("Failed To Connect To Database At '{}'".format(self.url))
 
     def connect(self):
-        if self.username is not None and self.password is not None:
-            self.conn = mysql.connector.connect(
-                host=self.url,
-                user=self.username,
-                password=self.password
-            )
-        else:
-            self.conn = sqlite3.connect(self.url)
+        # if self.username is not None and self.password is not None:
+        #     self.conn = mysql.connector.connect(
+        #         host=self.url,
+        #         user=self.username,
+        #         password=self.password,
+        #         database="songs"
+        #     )
+        # else:
+        self.conn = sqlite3.connect(self.url)
 
         self.c = self.conn.cursor()
 
@@ -1370,13 +1386,16 @@ def sql(*args):
     Connect to, or query an SQL database
 
     Usage:
-        sql CONNECT DATABASE [USERNAME] [PASSWORD] AS NAME      - Connects To Database
+        sql CONNECT DATABASE AS NAME                            - Connects To Database
         sql NAME QUERY...                                       - Executes Query In Specified Database
         sql NAME                                                - Opens SQL Prompt In The Specified Database
     """
     global SQL
     global selected_database
     if args[0].lower() == "connect":
+        if "as" not in args:
+            return_value.append("Please Specify A Name To Save This Connection As, Using The 'as' Keyword")
+            return
         name_index = args.index("as")
         name = args[name_index + 1]
         connection_info = args[1: name_index]
@@ -1389,12 +1408,13 @@ def sql(*args):
                 connection = SQLConnection(cwd + "/" + connection_info[0])
                 variables[name] = connection
                 return_value.append("Sucsessfuly Connected To Database '{}'".format(connection_info[0]))
-        else:
-            host = connection_info[0]
-            username = connection_info[1]
-            password = connection_info[2]
-
-            connection = SQLConnection(host, username, password)
+            else:
+                return_value.append("Could Not Connect To Database '{}'".format(connection_info[0]))
+        # else:
+        #     host = connection_info[0]
+        #     username = connection_info[1]
+        #     password = connection_info[2]
+        #     connection = SQLConnection(host, username, password)
 
     elif args[0] in variables:
         if len(args) == 1:
@@ -1402,10 +1422,6 @@ def sql(*args):
             selected_database = args[0]
             return
         execute_sql(args[1:], args[0])
-
-
-
-
 # endregion
 
 
