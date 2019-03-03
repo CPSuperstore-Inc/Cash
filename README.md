@@ -151,3 +151,7 @@ Each file should be able to import a variable called `return_value` from the `Ca
 You can override a function (and I won't be offended) simply by defining a function with the same name. Anything in an override file will automatically override any of the native functions.
 
 **DON'T FORGET THE DOCSTRINGS**
+
+# Cash Web (Coming Soon)
+
+A free unrestricted online web server showcasing the Cash console system 
